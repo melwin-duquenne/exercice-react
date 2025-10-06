@@ -68,6 +68,14 @@ app.post('/tasks', requireAuth, (req, res) => {
   res.status(201).json(task)
 })
 
+app.delete('/tasks/:id', requireAuth, (req, res) => {
+  const id = Number(req.params.id);
+  const idx = tasks.findIndex(t => t.id === id);
+  if (idx === -1) return res.status(404).json({ error: 'Not found' });
+  tasks.splice(idx, 1);
+  res.json({ success: true, id });
+});
+
 app.patch('/tasks/:id', requireAuth, (req, res) => {
   const id = Number(req.params.id)
   const task = tasks.find(t => t.id === id)

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../../context/context';
+import { AuthContext } from '../../context/AuthContext';
 
 interface CreateTaskModalProps {
   isOpen: boolean;

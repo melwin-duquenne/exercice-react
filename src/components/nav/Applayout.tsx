@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import './nav.css';
-
+import { AuthContext } from '../../context/AuthContext';
 function Applayout() {
     const navigate = useNavigate();
     const [path, setPath] = React.useState("");
+    const auth = useContext(AuthContext);
     const handleInput = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (path) navigate(path);
+    };
+    const handleLogout = () => {
+        auth?.logout();
+        navigate('/');
     };
     return (
         <header>
@@ -15,7 +20,13 @@ function Applayout() {
                 <Link to="/">Accueil</Link>
                 <Link to="/exo1">Exo 1</Link>
                 <Link to="/exo2">Exo 2</Link>
-                <Link to="/login">Login</Link>
+                {auth?.token ? (
+                    <button onClick={handleLogout} style={{ marginLeft: 12, padding: '0.5em 1em', borderRadius: 6, background: '#ff6b6b', border: 'none', color: '#fff', fontWeight: 600, cursor: 'pointer' }}>
+                        Déconnexion
+                    </button>
+                ) : (
+                    <Link to="/login">Login</Link>
+                )}
             </nav>
             <form onSubmit={handleInput}>
                 <input

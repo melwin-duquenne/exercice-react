@@ -1,3 +1,11 @@
+export async function deleteTask(id: number, token: string): Promise<void> {
+  const res = await fetch(`http://localhost:3001/tasks/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+}
 export async function createTask(title: string, token: string): Promise<any> {
   const res = await fetch('http://localhost:3001/tasks', {
     method: 'POST',

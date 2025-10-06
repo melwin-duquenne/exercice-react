@@ -1,7 +1,7 @@
 
 import { useState, useContext } from 'react';
 import { loginUser } from '../services/tasksService';
-import { AuthContext } from '../context/context';
+import { AuthContext } from '../context/AuthContext';
 function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
