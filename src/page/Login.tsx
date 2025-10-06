@@ -3,8 +3,8 @@ import { useState, useContext } from 'react';
 import { loginUser } from '../services/tasksService';
 import { AuthContext } from '../context/AuthContext';
 function Login() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState('student@example.com');
+	const [password, setPassword] = useState('password');
 	const [error, setError] = useState<string | null>(null);
 	const [success, setSuccess] = useState<string | null>(null);
 	const auth = useContext(AuthContext);
@@ -58,7 +58,7 @@ function Login() {
 				</label>
 				{error && <p style={{ color: 'red', margin: 0 }}>{error}</p>}
 				{success && <p style={{ color: 'green', margin: 0 }}>{success}</p>}
-				<button type="submit" style={{ padding: '0.7em', borderRadius: 6, background: '#61dafb', border: 'none', color: '#222', fontWeight: 600, marginTop: 8 }}>
+				<button type="submit" className='btnAccueil'>
 					Se connecter
 				</button>
 			</form>

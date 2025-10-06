@@ -1,0 +1,30 @@
+.cardAccueil {
+    background: linear-gradient(135deg, #ffffffcc, #f0f4ffcc);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px 50px;
+    text-align: center;
+    max-width: 600px;
+    margin: 60px auto;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cardAccueil:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cardAccueil h2 {
+    color: #2575fc;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.cardAccueil p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+

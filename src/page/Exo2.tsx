@@ -46,7 +46,7 @@ function Exo2() {
       )}
       <CreateTaskModal isOpen={modalOpen} onClose={() => setModalOpen(false)} onTaskCreated={refreshTasks} />
       {loading && <p>Chargement...</p>}
-      {error && <p style={{ color: 'red' }}>Erreur : {error}</p>}
+      {error && <p style={{ color: 'red' }}>Erreur : impossible de récupérer les tâches</p>}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center' }}>
         {tasks.map((task: Task) => (
           <TaskCard key={task.id} task={task} />

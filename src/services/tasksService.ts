@@ -5,6 +5,7 @@ export async function deleteTask(id: number, token: string): Promise<void> {
       'Authorization': `Bearer ${token}`,
     },
   });
+  if (!res.ok) throw new Error('Erreur lors de la suppression de la tâche');
 }
 export async function createTask(title: string, token: string): Promise<any> {
   const res = await fetch('http://localhost:3001/tasks', {
