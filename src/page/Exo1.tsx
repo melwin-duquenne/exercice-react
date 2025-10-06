@@ -1,9 +1,8 @@
-import Timer from './components/Timer/Timer.tsx'
-import './App.css'
-import { useState } from 'react';
-import SearchBar from './components/search/search.tsx';
+import { useState } from "react";
+import SearchBar from "../components/search/search";
+import Timer from "../components/Timer/Timer";
 
-function App() {
+function Exo1() {
   const [interval, setInterval] = useState<number>(1000);
   return (
     <>
@@ -11,7 +10,7 @@ function App() {
       <Timer interval={interval} />
       <SearchBar />
     </>
-  )
+  );
 }
 
-export default App
+export default Exo1;

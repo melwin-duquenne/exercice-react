@@ -1,0 +1,19 @@
+img {
+    max-width: 50%;
+}
+.notfound {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.link {
+    background-color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-top: 16px;
+}
